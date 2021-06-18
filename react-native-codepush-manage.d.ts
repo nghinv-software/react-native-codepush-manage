@@ -30,11 +30,13 @@ declare module '@nghinv/react-native-codepush-manage' {
     buildDate?: string;
   }
 
-  export interface CodePushProvider extends Component { }
+  export class CodePushProvider extends Component { }
 
   export function useCodePush<T extends CodePushContextType>(): T;
 
   export const withCodePush = (codePushOptions: CodePushOptions) => (WrappedComponent: React.ReactNode) => React.Children;
 
-  export interface AppVersion extends Component<AppVersionType> { }
+  export class AppVersion extends Component<AppVersionType> {
+
+  }
 }

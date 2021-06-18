@@ -12,6 +12,6 @@ module.exports = {
   withCodePush,
   useCodePush,
   get AppVersion() {
-    return require('./AppVersion');
+    return require('./AppVersion').default;
   },
 };

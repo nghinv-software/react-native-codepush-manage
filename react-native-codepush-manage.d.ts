@@ -5,6 +5,7 @@
 
 declare module '@nghinv/react-native-codepush-manage' {
   import React, { Component } from 'react';
+  import { ViewStyle, TextStyle } from 'react-native';
   import codePush, { CodePushOptions } from 'react-native-code-push';
 
   interface CodePushContextType {
@@ -12,9 +13,28 @@ declare module '@nghinv/react-native-codepush-manage' {
     progress: null | number;
   }
 
+  type StatusTitle = {
+    Updating: string;
+    Installing: string;
+    NeedToRestart: string;
+  }
+
+  type AppVersionType = {
+    title?: string;
+    statusTitle?: StatusTitle;
+    style?: ViewStyle;
+    titleColor?: string;
+    titleStyle?: TextStyle;
+    onPress?: () => void;
+    restartOnPress?: boolean;
+    buildDate?: string;
+  }
+
   export interface CodePushProvider extends Component { }
 
   export function useCodePush<T extends CodePushContextType>(): T;
 
   export const withCodePush = (codePushOptions: CodePushOptions) => (WrappedComponent: React.ReactNode) => React.Children;
+
+  export interface AppVersion extends Component<AppVersionType> { }
 }

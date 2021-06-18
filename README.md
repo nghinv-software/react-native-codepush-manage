@@ -18,6 +18,11 @@ yarn add @nghinv/react-native-codepush-manage
 npm install @nghinv/react-native-codepush-manage
 ```
 
+<img src='./assets/app-version.png'>
+<img src='./assets/updating.png'>
+<img src='./assets/needRestart.png'>
+
+
 # How to use
 
 ## Connect with Root Component

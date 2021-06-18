@@ -1,0 +1,41 @@
+{
+  "name": "@nghinv/react-native-codepush-manage",
+  "version": "1.0.0",
+  "description": "React native codepush manage",
+  "main": "./libs/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react-native",
+    "react native codepush manage",
+    "code push",
+    "codepush",
+    "@nghinv/react-native-codepush-manage",
+    "@nghinv",
+    "nghinv",
+    "lumi",
+    "lumi-software"
+  ],
+  "author": "nghinv@lumi.biz",
+  "types": "react-native-codepush-manage.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nghinv-software/react-native-codepush-manage.git"
+  },
+  "dependencies": {
+    "react-native-code-push": "*",
+    "react-native-device-info": "*"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nghinv-software/react-native-codepush-manage/issues"
+  },
+  "homepage": "https://github.com/nghinv-software/react-native-codepush-manage#readme",
+  "devDependencies": {},
+  "publishConfig": {
+    "access": "public",
+    "cache": "~/.npm",
+    "registry": "https://npm.pkg.github.com"
+  }
+}

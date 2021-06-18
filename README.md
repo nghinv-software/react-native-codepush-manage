@@ -81,11 +81,11 @@ you can use `withCodePush` or `CodePushProvider` to wrapped Root component
     <View>
       <AppVersion 
         buildDate='02/09/2021'
-        statusTitle={
+        statusTitle={{
           Updating: 'Updating',
           Installing: 'Installing',
           NeedToRestart: 'Need to restart',
-        }
+        }}
       />
     </View>
   )

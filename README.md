@@ -2,6 +2,13 @@
 
 Loading an overlay when running long tasks in the react-native application.
 
+---
+
+
+[![Version][version-badge]][package]
+[![MIT License][license-badge]][license]
+[![All Contributors][all-contributors-badge]][all-contributors]
+
 # Installation
 
 ## Installing the package
@@ -116,3 +123,10 @@ you can use `withCodePush` or `CodePushProvider` to wrapped Root component
 | Updating | `String` | `Updating` |  |
 | Installing | `String` | `Installing` |  |
 | NeedToRestart | `String` | `Need to restart` |  |
+
+[version-badge]: https://img.shields.io/npm/v/@nghinv/react-native-codepush-manage.svg?style=flat-square
+[package]: https://www.npmjs.com/package/@nghinv/react-native-codepush-manage
+[license-badge]: https://img.shields.io/npm/l/@nghinv/react-native-codepush-manage.svg?style=flat-square
+[license]: https://opensource.org/licenses/MIT
+[all-contributors-badge]: https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square
+[all-contributors]: #contributors

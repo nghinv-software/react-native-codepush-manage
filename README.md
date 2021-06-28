@@ -110,9 +110,12 @@ you can use `withCodePush` or `CodePushProvider` to wrapped Root component
 | titleColor | `String` | `null` | Title color |
 | titleStyle | `TextStyle` | `null` | Title style |
 | onPress | `() => void` | `null` |  |
-| restartOnPress | `Bool` | `null` | press to restart app |
+| enableRestartOnPress | `Bool` | `null` | press to restart app |
+| enableSyncOnPress | `Bool` | `null` | press to sync code push |
 | buildDate | `String` | `null` | App build date |
 | statusTitle | `StatusTitleStyle` | `null` |  |
+| buttonProps | `TouchableOpacityProps` | `null` |  |
+| titleProps | `TextProps` | `null` |  |
 
 <br>
 

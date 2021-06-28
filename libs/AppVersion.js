@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, ViewStyle, TextStyle } from 'react-native';
+import { Text, StyleSheet, TouchableOpacity, ViewStyle, TextStyle, TouchableOpacityProps, TextProps } from 'react-native';
 import equals from 'react-fast-compare';
 import CodePush from 'react-native-code-push';
 import DeviceInfo from 'react-native-device-info';
@@ -23,12 +23,16 @@ interface AppVersionProps {
   titleColor?: String;
   titleStyle?: TextStyle;
   onPress?: () => void;
-  restartOnPress?: Boolean;
+  enableRestartOnPress?: Boolean;
+  enableSyncOnPress?: Boolean;
   buildDate?: String;
+  buttonProps?: TouchableOpacityProps;
+  titleProps?: TextProps;
 }
 
 AppVersion.defaultProps = {
-  restartOnPress: true,
+  enableRestartOnPress: true,
+  enableSyncOnPress: true,
   statusTitle: {
     Updating: 'Updating',
     Installing: 'Installing',
@@ -37,7 +41,7 @@ AppVersion.defaultProps = {
 };
 
 function AppVersion(props: AppVersionProps) {
-  const { title, statusTitle, style, titleColor, titleStyle, onPress, restartOnPress, buildDate } = props;
+  const { title, statusTitle, style, titleColor, titleStyle, onPress, enableRestartOnPress, enableSyncOnPress, buildDate, buttonProps, titleProps } = props;
   const { status, progress } = useCodePush();
   const version = DeviceInfo.getVersion();
 
@@ -62,15 +66,20 @@ function AppVersion(props: AppVersionProps) {
 
   const onReStartApp = () => {
     onPress && onPress();
-    restartOnPress && CodePush.restartApp();
+
+    if (status === CodePush.SyncStatus.UPDATE_INSTALLED) {
+      enableRestartOnPress && CodePush.restartApp();
+    } else {
+      enableSyncOnPress && CodePush.sync().then(res => {
+        console.log('CodePush::sync', res);
+      });
+    }
   };
 
-  const ButtonComponent = status === CodePush.SyncStatus.UPDATE_INSTALLED ? TouchableOpacity : View;
-
   return (
-    <ButtonComponent onPress={onReStartApp} style={[styles.container, style]}>
-      <Text style={[styles.txtTitle, { color: titleColor }, titleStyle]}>{titleVersion}</Text>
-    </ButtonComponent>
+    <TouchableOpacity {...buttonProps} onPress={onReStartApp} style={[styles.container, style]}>
+      <Text {...titleProps} style={[styles.txtTitle, { color: titleColor }, titleStyle]}>{titleVersion}</Text>
+    </TouchableOpacity>
   );
 }
 

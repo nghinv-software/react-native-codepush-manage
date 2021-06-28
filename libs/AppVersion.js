@@ -16,7 +16,7 @@ type StatusTitle = {
   NeedToRestart: String;
 }
 
-interface AppVersionProps {
+interface AppVersionProps extends TouchableOpacityProps {
   title?: String;
   statusTitle?: StatusTitle;
   style?: ViewStyle;
@@ -26,7 +26,6 @@ interface AppVersionProps {
   enableRestartOnPress?: Boolean;
   enableSyncOnPress?: Boolean;
   buildDate?: String;
-  buttonProps?: TouchableOpacityProps;
   titleProps?: TextProps;
 }
 
@@ -41,7 +40,19 @@ AppVersion.defaultProps = {
 };
 
 function AppVersion(props: AppVersionProps) {
-  const { title, statusTitle, style, titleColor, titleStyle, onPress, enableRestartOnPress, enableSyncOnPress, buildDate, buttonProps, titleProps } = props;
+  const {
+    title,
+    statusTitle,
+    style,
+    titleColor,
+    titleStyle,
+    onPress,
+    enableRestartOnPress,
+    enableSyncOnPress,
+    buildDate,
+    titleProps,
+    ...otherProps,
+  } = props;
   const { status, progress } = useCodePush();
   const version = DeviceInfo.getVersion();
 
@@ -77,7 +88,7 @@ function AppVersion(props: AppVersionProps) {
   };
 
   return (
-    <TouchableOpacity {...buttonProps} onPress={onReStartApp} style={[styles.container, style]}>
+    <TouchableOpacity {...otherProps} onPress={onReStartApp} style={[styles.container, style]}>
       <Text {...titleProps} style={[styles.txtTitle, { color: titleColor }, titleStyle]}>{titleVersion}</Text>
     </TouchableOpacity>
   );

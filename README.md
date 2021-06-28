@@ -114,7 +114,6 @@ you can use `withCodePush` or `CodePushProvider` to wrapped Root component
 | enableSyncOnPress | `Bool` | `null` | press to sync code push |
 | buildDate | `String` | `null` | App build date |
 | statusTitle | `StatusTitleStyle` | `null` |  |
-| buttonProps | `TouchableOpacityProps` | `null` |  |
 | titleProps | `TextProps` | `null` |  |
 
 <br>

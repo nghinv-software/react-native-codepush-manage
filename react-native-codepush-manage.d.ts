@@ -5,7 +5,7 @@
 
 declare module '@nghinv/react-native-codepush-manage' {
   import React, { Component } from 'react';
-  import { ViewStyle, TextStyle } from 'react-native';
+  import { ViewStyle, TextStyle, TouchableOpacityProps, TextProps } from 'react-native';
   import codePush, { CodePushOptions } from 'react-native-code-push';
 
   interface CodePushContextType {
@@ -19,15 +19,17 @@ declare module '@nghinv/react-native-codepush-manage' {
     NeedToRestart: string;
   }
 
-  type AppVersionType = {
+  interface AppVersionType extends TouchableOpacityProps {
     title?: string;
     statusTitle?: StatusTitle;
     style?: ViewStyle;
     titleColor?: string;
     titleStyle?: TextStyle;
     onPress?: () => void;
-    restartOnPress?: boolean;
+    enableRestartOnPress?: Boolean;
+    enableSyncOnPress?: Boolean;
     buildDate?: string;
+    titleProps?: TextProps;
   }
 
   export class CodePushProvider extends Component { }

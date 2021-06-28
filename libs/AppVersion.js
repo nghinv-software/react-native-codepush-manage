@@ -51,7 +51,7 @@ function AppVersion(props: AppVersionProps) {
     enableSyncOnPress,
     buildDate,
     titleProps,
-    ...otherProps,
+    ...otherProps
   } = props;
   const { status, progress } = useCodePush();
   const version = DeviceInfo.getVersion();

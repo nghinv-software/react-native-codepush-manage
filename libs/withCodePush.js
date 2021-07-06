@@ -10,7 +10,7 @@ const withCodePush = (codePushOptions) => (WrappedComponent) => {
   class CodePushProvider extends React.PureComponent {
     state = {
       status: null,
-      progress: null,
+      progress: 0,
     }
 
     codePushStatusDidChange(status) {

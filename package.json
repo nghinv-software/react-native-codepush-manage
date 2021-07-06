@@ -1,6 +1,6 @@
 {
   "name": "@nghinv/react-native-codepush-manage",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "React native codepush manage",
   "main": "./libs/index.js",
   "scripts": {

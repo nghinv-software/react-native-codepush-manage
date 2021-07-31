@@ -25,6 +25,12 @@ yarn add @nghinv/react-native-codepush-manage
 npm install @nghinv/react-native-codepush-manage
 ```
 
+ - peerDependencies
+ 
+```sh
+yarn add react-native-code-push react-native-device-info
+```
+
 <img src='./assets/app-version.png'>
 <img src='./assets/updating.png'>
 <img src='./assets/needRestart.png'>
@@ -125,6 +131,11 @@ you can use `withCodePush` or `CodePushProvider` to wrapped Root component
 | Updating | `String` | `Updating` |  |
 | Installing | `String` | `Installing` |  |
 | NeedToRestart | `String` | `Need to restart` |  |
+
+---
+## Credits
+
+- [@Nghi-NV](https://github.com/Nghi-NV)
 
 [version-badge]: https://img.shields.io/npm/v/@nghinv/react-native-codepush-manage.svg?style=flat-square
 [package]: https://www.npmjs.com/package/@nghinv/react-native-codepush-manage

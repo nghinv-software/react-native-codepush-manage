@@ -18,10 +18,8 @@ class CodePushProvider extends React.PureComponent {
   }
 
   codePushDownloadDidProgress(progress) {
-    const newProgress = parseInt(progress.receivedBytes / progress.totalBytes);
-    if (newProgress !== this.state.progress) {
-      this.setState({ progress: newProgress });
-    }
+    const newProgress = (progress && progress.receivedBytes && progress.totalBytes && progress.totalBytes !== 0) ? Math.floor((progress.receivedBytes * 100) / progress.totalBytes) : 0;
+    this.setState({ progress: newProgress });
   }
 
   render() {
